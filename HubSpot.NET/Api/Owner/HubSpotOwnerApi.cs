@@ -49,7 +49,7 @@ namespace HubSpot.NET.Api.Owner
 
             try
             {
-                var data = _client.Execute<T>(path, Method.GET, convertToPropertiesSchema: true);
+                var data = _client.Execute<T>(path, Method.GET, convertToPropertiesSchema: false);
                 return data;
             }
             catch (HubSpotException exception)
