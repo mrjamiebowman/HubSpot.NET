@@ -45,7 +45,7 @@ namespace HubSpot.NET.Core
         
         public IHubSpotNoteApi Note { get; protected set; }
 
-        protected virtual void Initialise(IHubSpotClient client)
+        protected virtual void Initialize(IHubSpotClient client)
 		{
             Company = new HubSpotCompanyApi(client);
             Contact = new HubSpotContactApi(client);
@@ -70,14 +70,14 @@ namespace HubSpot.NET.Core
         {
             IHubSpotClient client = new HubSpotBaseClient(apiKey);
 
-            Initialise(client);
+            Initialize(client);
         }
 
         public HubSpotApi(HubSpotToken token)
         {
             IHubSpotClient client = new HubSpotBaseClient(token);
 
-            Initialise(client);
+            Initialize(client);
         }
     }
 }

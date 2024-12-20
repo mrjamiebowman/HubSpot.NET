@@ -25,7 +25,7 @@ namespace HubSpot.NET.Core
         // Used for OAUTH
         private HubSpotToken _token;
 
-        private void Initialise()
+        private void Initialize()
         {
             _client = new RestClient(BaseUrl);
         }
@@ -37,7 +37,7 @@ namespace HubSpot.NET.Core
         {
             _apiKey = privateAppKey;
             _mode = HubSpotAuthenticationMode.PRIVATE_APP_KEY;
-            Initialise();
+            Initialize();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace HubSpot.NET.Core
         {
             _token = token;
             _mode = HubSpotAuthenticationMode.OAUTH;
-            Initialise();
+            Initialize();
         }
 
         public T Execute<T>(string absoluteUriPath, object entity = null, Method method = Method.GET, bool convertToPropertiesSchema = true) where T : IHubSpotModel, new()
